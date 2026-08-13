@@ -1,0 +1,497 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+
+  color: #f8fafc;
+  background: #070b14;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #070b14;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* =========================
+   APP
+========================= */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  background: #070b14;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+
+  padding: 24px 16px;
+
+  background: #0b1120;
+
+  border-right: 1px solid #1e293b;
+
+  display: flex;
+  flex-direction: column;
+
+  flex-shrink: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 4px 8px 30px;
+}
+
+.brand-logo {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+
+  font-size: 18px;
+  font-weight: 800;
+
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.25);
+}
+
+.brand strong {
+  display: block;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #f8fafc;
+}
+
+.brand small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #64748b;
+
+  font-size: 10px;
+}
+
+/* NAV */
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-item {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: #94a3b8;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-item:hover {
+  background: #111b2e;
+  color: #f8fafc;
+}
+
+.nav-item.active {
+  background: #1e1b4b;
+  color: #a5b4fc;
+}
+
+.nav-item span {
+  width: 20px;
+
+  text-align: center;
+
+  font-size: 16px;
+}
+
+/* SIDEBAR FOOTER */
+
+.sidebar-footer {
+  margin-top: auto;
+
+  padding: 12px 10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #64748b;
+
+  font-size: 10px;
+}
+
+.online {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.7);
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+  width: 100%;
+
+  min-width: 0;
+
+  padding: 30px;
+
+  overflow: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  margin: 0 0 7px;
+
+  color: #818cf8;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.header h1 {
+  margin: 0;
+
+  font-size: 30px;
+
+  letter-spacing: -0.5px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #312e81, #6366f1);
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.profile strong {
+  display: block;
+
+  font-size: 13px;
+}
+
+.profile span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #64748b;
+
+  font-size: 10px;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+  width: 100%;
+}
+
+/* =========================
+   STAT CARDS
+========================= */
+
+.stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  min-width: 0;
+
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  background: #0b1120;
+
+  border: 1px solid #1e293b;
+
+  border-radius: 16px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #334155;
+}
+
+.stat-icon {
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #1e1b4b;
+
+  color: #a5b4fc;
+
+  font-size: 18px;
+}
+
+.stat-card p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+.stat-card h2 {
+  margin: 4px 0;
+
+  font-size: 24px;
+
+  line-height: 1;
+}
+
+.stat-card span {
+  color: #22c55e;
+
+  font-size: 10px;
+}
+
+/* =========================
+   WELCOME CARD
+========================= */
+
+.welcome-card {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 32px;
+
+  margin-bottom: 20px;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(99, 102, 241, 0.16),
+      transparent 30%
+    ),
+    #0b1120;
+
+  border: 1px solid #1e293b;
+
+  border-radius: 18px;
+}
+
+.welcome-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 200px;
+  height: 200px;
+
+  right: -80px;
+  bottom: -100px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(129, 140, 248, 0.15);
+}
+
+.welcome-card h2 {
+  margin: 0 0 10px;
+
+  font-size: 25px;
+
+  letter-spacing: -0.4px;
+}
+
+.welcome-card > p:last-child {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1050px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    width: 72px;
+
+    padding: 20px 10px;
+  }
+
+  .brand {
+    justify-content: center;
+
+    padding-bottom: 25px;
+  }
+
+  .brand > div:last-child {
+    display: none;
+  }
+
+  .nav-item {
+    justify-content: center;
+
+    padding: 12px 8px;
+
+    font-size: 0;
+  }
+
+  .nav-item span {
+    font-size: 16px;
+  }
+
+  .sidebar-footer {
+    justify-content: center;
+
+    font-size: 0;
+  }
+
+  .main {
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .profile > div:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    margin-bottom: 20px;
+  }
+
+  .welcome-card {
+    padding: 24px;
+  }
+}
